@@ -3,7 +3,7 @@ import { IMovie } from '../interfaces/MovieInterface';
 import { IMovieDetail } from '../interfaces/IMovieDetail';
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
-const API_KEY = 'YOUR_API_KEY';
+const API_KEY = 'e13806629171369677fefa8d2af318b3';
 
 export const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w185';
 

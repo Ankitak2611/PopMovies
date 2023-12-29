@@ -34,7 +34,7 @@ const DetailsScreen: React.FC = () => {
               style={
                 detailsScreenStyles.rating
               }>{`${movieDetail.vote_average}/10`}</Text>
-            <TouchableOpacity onPress={()=> {}} style={detailsScreenStyles.buttonContainer}>
+            <TouchableOpacity onPress={() => { }} style={detailsScreenStyles.buttonContainer}>
               <Text style={detailsScreenStyles.favoriteText}>Add to Favorite</Text>
             </TouchableOpacity>
           </View>
@@ -43,14 +43,17 @@ const DetailsScreen: React.FC = () => {
           {movieDetail.overview}
         </Text>
       </View>
-
-      <Text style={detailsScreenStyles.trailerHeading}>TRAILERS</Text>
-      <View
-        style={detailsScreenStyles.borderContainer}
-      />
-      {data.trailers?.map((videoId: string, index: number) => {
-        return <TrailerView index={index} videoId={videoId} key={videoId} />;
-      })}
+      {data?.trailers?.length !== 0 &&
+        <View>
+          <Text style={detailsScreenStyles.trailerHeading}>TRAILERS</Text>
+          <View
+            style={detailsScreenStyles.borderContainer}
+          />
+          {data.trailers?.map((videoId: string, index: number) => {
+            return <TrailerView index={index} videoId={videoId} key={videoId} />;
+          })}
+        </View>
+      }
     </ScrollView>
   );
 };

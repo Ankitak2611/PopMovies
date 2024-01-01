@@ -6,7 +6,7 @@ on:
       
 env:
   APP_CENTER_TOKEN: ${{ secrets.APP_CENTER_TOKEN_ANDROID }}
-  APP_NAME: ${{ ‘MyApp-Android/ENV_DEV’ }}
+  APP_NAME: ${{ ‘PopMovies/ENV_DEV’ }}
   TESTING_GROUP: ${{ ‘ENV_DEV’ }}
   UPLOAD_FILE: ${{ ‘android/app/build/outputs/apk/app-debug.apk' }}
   
@@ -29,6 +29,7 @@ jobs:
 
       - name: Build android
         run: npm run cd android && ./gradlew clean && ./gradlew assembleDebug
+        # run: npm run cd android && ./gradlew clean && ./gradlew assembleRelease
 
       - name: Upload to App Center
         uses: wzieba/AppCenter-Github-Action@v1
